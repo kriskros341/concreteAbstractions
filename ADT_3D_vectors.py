@@ -10,8 +10,16 @@ class vector:
         new_z = self.z_coord+another_vector.z_coord
         return vector(new_x, new_y, new_z)
 
+    def distance(self, another_vector):
+        x = (self.x_coord-another_vector.x_coord)**2
+        y = (self.y_coord-another_vector.y_coord)**2
+        z = (self.z_coord-another_vector.z_coord)**2
+        return round(((x+y+z)**(1/2)),4)
+
     def dot_prod(self):
         return self.x_coord**2+self.y_coord**2+self.z_coord**2
+
+    
 
     def __str__(self):
         return f"x: {self.x_coord}, y: {self.y_coord}, z: {self.z_coord}"
@@ -19,5 +27,6 @@ class vector:
 v1 = vector(1,2,1)
 v2 = vector(2,1,4)
 print(
-    (v1+v2).dot_prod() #  LOOOL
+    (v1+v2).dot_prod() #  LOL
     )
+print(v1.distance(v2))
